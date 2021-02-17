@@ -70,7 +70,7 @@ public class MarbleObject : MonoBehaviour
         float distance = ((100f / 10000f) * percentage);
         jumpDistance = System.String.Format("{0:0.00}", distance);
         int score = Mathf.RoundToInt(distance);
-        longJumpForce = range;
+        longJumpForce = name.Equals("Simpathey") ? 3.0 * range : range;
         //transform.position = new Vector3(-13.5f, -4.828952f, 0f);
         rb.AddForce(new Vector2(longJumpForce, 0), ForceMode2D.Impulse);
         StartCoroutine(WaitUntilMovementStops(playerID,score));
